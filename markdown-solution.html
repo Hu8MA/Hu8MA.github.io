@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - Hussein Mahdi</title>
+    <!-- Keep your existing CSS or styling -->
+    <link rel="stylesheet" href="your-existing-styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <style>
+        /* Article container styling */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #121212; /* Match your dark theme */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .article-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .article-container pre {
+            background-color: #1e1e1e;
+            border-radius: 5px;
+            padding: 15px;
+            overflow: auto;
+        }
+        
+        .article-container code {
+            font-family: monospace;
+            background-color: #1e1e1e;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .article-container h1, .article-container h2 {
+            color: #9c27b0; /* Purple to match your theme */
+            margin-top: 1.5em;
+        }
+        
+        .article-container blockquote {
+            border-left: 4px solid #9c27b0;
+            padding-left: 15px;
+            margin-left: 0;
+            color: #cccccc;
+        }
+        
+        #loading {
+            text-align: center;
+            padding: 20px;
+            color: #ffffff;
+        }
+        
+        #error {
+            background-color: rgba(255, 0, 0, 0.2);
+            color: #ff5252;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your header and navigation here -->
+    
+    <div id="loading">Loading article...</div>
+    <div id="error"></div>
+    <div class="article-container" id="article-content" style="display: none;"></div>
+    
+    <script>
+        async function loadArticle() {
+            const articleContent = document.getElementById('article-content');
+            const loadingElement = document.getElementById('loading');
+            const errorElement = document.getElementById('error');
+            
+            // Get the article ID from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id');
+            
+            if (!articleId) {
+                errorElement.textContent = "Article ID not specified";
+                errorElement.style.display = 'block';
+                loadingElement.style.display = 'none';
+                return;
+            }
+            
+            // Construct the URL to your markdown file in GitHub
+            const url = `https://raw.githubusercontent.com/hu8ma/blog-articles/main/${articleId}.md`;
+            
+            try {
+                const response = await fetch(url);
+                
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch article: ${response.status} ${response.statusText}`);
+                }
+                
+                const markdown = await response.text();
+                
+                // Convert Markdown to HTML
+                const converter = new showdown.Converter({
+                    tables: true,
+                    tasklists: true,
+                    ghCodeBlocks: true,
+                    simpleLineBreaks: true
+                });
+                
+                articleContent.innerHTML = converter.makeHtml(markdown);
+                
+                // Show article, hide loading
+                loadingElement.style.display = 'none';
+                articleContent.style.display = 'block';
+                
+                // Update page title from first h1 if available
+                const firstHeading = articleContent.querySelector('h1');
+                if (firstHeading) {
+                    document.title = `${firstHeading.textContent} - Hussein Mahdi`;
+                }
+            } catch (error) {
+                console.error('Error loading article:', error);
+                errorElement.textContent = `Error loading article: ${error.message}`;
+                errorElement.style.display = 'block';
+                loadingElement.style.display = 'none';
+            }
+        }
+        
+        // Load article when page loads
+        document.addEventListener('DOMContentLoaded', loadArticle);
+    </script>
+</body>
+</html>
