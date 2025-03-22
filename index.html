@@ -32,7 +32,7 @@
         <nav class="pt-2 px-5 flex  justify-around items-center ">
  
             <div>
-                <a href="#home" class="w-full h-full ">
+                <a href="https://hu8ma.github.io" class="w-full h-full ">
                     <h1 class=" flex p-3 ">
                          <span class="text-color-s logo text-3xl transelator hover:text-color-c3" >Programmer Coffee</span> 
                     </h1>
@@ -149,7 +149,7 @@
                                
                                 <div class="bg-color-p bg-opacity-70 w-full h-fit p-1">
                                         <span class="py-2 text-xl text-contant text-color-c2">
-                                            <a href="article.html?id=value-threading"> Video/Unveiling 🥇 the Dynamics of Systems Design Engineers and Software Architects 👨‍💻</a>
+                                            <a href="article.html?id=articel"> Video/Unveiling 🥇 the Dynamics of Systems Design Engineers and Software Architects 👨‍💻</a>
                                           
                                         </span>
                                         
@@ -608,10 +608,28 @@
 
     </footer>
 
- 
-    <!-- <script src="../js/main.js"></script> -->
-    
+     
     <script>
+
+
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
+const hLink = document.querySelectorAll('#hLink');
+const faSolid = document.querySelector(".fa-solid");
+ 
+
+hamburger.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    faSolid.classList.toggle('fa-xmark');
+})
+
+hLink.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        faSolid.classList.toggle('fa-xmark');
+    })
+})
+
     document.addEventListener("DOMContentLoaded", function() {
     var sentences = [
     'Programmer',
