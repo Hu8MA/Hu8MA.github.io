@@ -434,8 +434,8 @@
             }
             
             // Use your existing article path structure
-            const url = `./Articles/${articleId}.md`;
-            
+            // Use your existing article path structure but with the correct GitHub raw content URL
+            const url = `https://raw.githubusercontent.com/Hu8MA/Hu8MA.github.io/main/Articles/${articleId}.md`;            
             try {
                 const response = await fetch(url);
                 
