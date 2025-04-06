@@ -21,11 +21,25 @@
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
 
-
-
+ 
+    <style>
+         html, body {
+         height: auto;
+        overflow-y: auto;
+        }
+                .lazy-background {
+          background-image: none;
+        }
+        
+        @media (prefers-reduced-motion: no-preference) {
+          .lazy-background {
+            content-visibility: auto;
+          }
+        }
+      </style>
 </head> 
  
-<body class="max-h-screen bg-color-p">
+<body class="max-h-screen bg-color-p lazy-background">
 
     <header class="top-0 z-50 flex-col items-center justify-between bg-color-c1  border border-t-0  border-l-0  border-r-0  border-b-4  border-b-color-c3 sticky">
        
@@ -128,7 +142,8 @@
 
 
                 </section>
-                 
+   
+                
                 <section id="News" class=" w-full h-full my-1 py-20">
                     
                     <div class="w-full h-full flex p-6 items-center gap-5">
@@ -142,41 +157,35 @@
                     
                     <div class="w-full h-full flex justify-center  py-16 overflow-hidden text-color-s">
 
-                        <div class="grid grid-flow-row gap-5 lg:gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center ">
+                        <div class="grid grid-flow-row gap-5 lg:gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center">
                      
-                            <div id="dynamic-image"  class="h-80 w-80 md:h-96 md:w-96    hover:shadow-color-c5  flex flex-col  justify-end shadow-xl  shadow-color-p  transelator " 
-                            style="background-size: cover; background-position: center;">
-                               
-                                <div class="bg-color-p bg-opacity-70 w-full h-fit p-1">
+                             
+                            <div class="h-80 w-80 md:h-96 md:w-96 flex flex-col justify-end shadow-xl shadow-color-p  hover:shadow-color-c5 transelator bg-contain bg-no-repeat bg-center"
+                                   style="background-image:url('https://drive.google.com/thumbnail?id=1LaT5F-dB2RSBaZraK2api082bScXv9fh&sz=w1000');">
+                       
+                                     <div class="bg-color-p bg-opacity-70 w-full h-fit p-6">
                                         <span class="py-2 text-xl text-contant text-color-c2">
-                                            <a  href="article.html?id=d3e69e5d-ff6d-45e7-9f2b-12e2b3a60a89"> Video/Unveiling 🥇 the Dynamics of Systems Design Engineers and Software Architects 👨‍💻
-
-                                            </a>
+                                            <a  href="article.html?id=d3e69e5d-ff6d-45e7-9f2b-12e2b3a60a89"> Understanding Web Development Approaches: SSR, SSG, CSR, and SPA 👨‍💻 </a>
                                           
                                         </span>
-                                        
-
-                                        <span class="flex gap-1 w-full justify-around py-3">
-                                            
-                                          <div class="flex gap-3">
-
-                                                <a class=" flex " href="#linkedIn">  
-                                                    <svg viewBox="0 0 48 48" class="w-[2rem] h-[2rem]" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="24" cy="24" r="20" fill="#0077B5"></circle> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z" fill="white"></path> </g></svg>
-                                                </a>
-                                     
-                                                <a class=" flex " href="#yotuobe">  
-                         
-                                                    <svg viewBox="0 -7 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" class="w-[1.8rem] h-[1.8rem] " xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Youtube-color</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Color-" transform="translate(-200.000000, -368.000000)" fill="#CE1312"> <path d="M219.044,391.269916 L219.0425,377.687742 L232.0115,384.502244 L219.044,391.269916 Z M247.52,375.334163 C247.52,375.334163 247.0505,372.003199 245.612,370.536366 C243.7865,368.610299 241.7405,368.601235 240.803,368.489448 C234.086,368 224.0105,368 224.0105,368 L223.9895,368 C223.9895,368 213.914,368 207.197,368.489448 C206.258,368.601235 204.2135,368.610299 202.3865,370.536366 C200.948,372.003199 200.48,375.334163 200.48,375.334163 C200.48,375.334163 200,379.246723 200,383.157773 L200,386.82561 C200,390.73817 200.48,394.64922 200.48,394.64922 C200.48,394.64922 200.948,397.980184 202.3865,399.447016 C204.2135,401.373084 206.612,401.312658 207.68,401.513574 C211.52,401.885191 224,402 224,402 C224,402 234.086,401.984894 240.803,401.495446 C241.7405,401.382148 243.7865,401.373084 245.612,399.447016 C247.0505,397.980184 247.52,394.64922 247.52,394.64922 C247.52,394.64922 248,390.73817 248,386.82561 L248,383.157773 C248,379.246723 247.52,375.334163 247.52,375.334163 L247.52,375.334163 Z" id="Youtube"> </path> </g> </g> </g></svg>
-                        
-                                                 </a>
-                        
-                                            </div>
-                                        </span>
-                               </div>
-                               
+                                  
+                                  </div>
 
                             </div>
  
+                            
+                            <div class="h-80 w-80 md:h-96 md:w-96 hover:shadow-color-c5 flex flex-col justify-end shadow-xl shadow-color-p transelator bg-contain bg-no-repeat bg-center"
+                                    style="background-image:url('https://drive.google.com/thumbnail?id=1ZdSX0YtYr5puWuBsGbj4-_ddMZImWAz6&sz=w1000');">
+                        
+                                    <div class="bg-color-p bg-opacity-70 w-full h-fit p-6">
+                                        <span class="py-2 text-xl text-contant text-color-c2">
+                                            <a  href="article.html?id=d3e69e5d-ff6d-45e7-9f2b-12e2b3a60a89">Kestrel as a Powerful Web Servers 🛠 </a>
+                                        
+                                        </span>
+                                
+                                </div>
+
+                             </div>
 
                         </div>
                     </div>
@@ -184,12 +193,10 @@
                 </section>
 
 
-
                 <section class="w-full h-full py-10 flex flex-col justify-center items-center">
-                    <a href="#" class="p-2 text-color-c3 hover:underline text-lg text-contant">look for All Posts 🚀</a>
+                    <a href="List.html" class="p-2 text-color-c3 hover:underline text-lg text-contant">looking for More Posts 🚀</a>
                     <div class="w-[80%] p-1 bg-color-c3">  </div>
                 </section>
-
 
 
                 <section id="Services" class="w-full h-full  my-1 py-28">
@@ -297,8 +304,7 @@
                     <div class="w-[80%] p-1 bg-color-c3">  </div>
                 </section>
 
-
-                
+<!--                 
                 <section id="Products" class=" w-full h-full my-1 py-20">
                     
                     <div class="w-full h-full flex p-6 items-center gap-5">
@@ -326,13 +332,13 @@
                         </div>
                     </div>
 
-                </section>
+                </section> -->
 
-
+<!-- 
                 <section class="w-full h-full py-10 flex flex-col justify-center items-center">
                     <a href="#" class="p-2 text-color-c3 hover:underline text-lg text-contant">look for All Products 🚀</a>
                     <div class="w-[80%] p-1 bg-color-c3">  </div>
-                </section>   
+                </section>    -->
 
 
                 <section id="About" class=" w-full h-full my-1 py-20">
@@ -346,28 +352,52 @@
 
                     <div class="w-full h-full py-10 grid  grid-cols-1 lg:grid-cols-2 gap-2 px-2">
 
-                        <div class="w-full h-full bg-slate-700 shadow-2xl shadow-color-p p-4 transelator flex flex-col gap-2 text-color-s/75 hover:text-color-s text-capton">
+                        <div class="w-full h-full bg-slate-700 
+                        shadow-2xl shadow-color-p p-4 transelator flex flex-col gap-2 text-color-s/75 hover:text-color-s text-capton">
                             <p>
-                                Hey there! I'm <span class="text-color-c2">Hussein Mahdi</span> , a software enthusiast with a journey that started during my university days at the University of Babylon, College of Information Technology. It was there, in the midst of my academic pursuits, that I discovered my passion for software engineering. As I delved deeper into my studies, my fascination with algorithms, analysis, and logical thinking grew exponentially.
+                                Hey there! I'm <span class="text-color-c5">Hussein Mahdi</span> , a software engineer with over 5 years of journey in software development as of 2025. 
+                                   My path began during my studies at the University of Babylon, College of Information Technology, where I graduated with very good grades, ranking second in my cohort. I'm currently pursuing my Master's degree, expected to graduate in 2026.
+                                    Throughout my academic pursuits, I developed a passion for software engineering with a focus on development and software architecture.
                             </p>
 
                             <p>
-                                Fast forward to today, and I've emerged as a seasoned software engineer, having graduated among the top ranks of my class with the best degrees in algorithms, software engineering, and artificial intelligence. Over the years, I've honed my skills and expertise through various roles in different organizations, primarily as a web developer. Now, I leverage my experience and knowledge to assist a diverse array of clients, offering programming solutions and guidance tailored to their unique needs.
+                                Fast forward to today, and I've evolved as a software engineer specializing in .NET development.
+                                 My professional experience includes working at Digital Logic where I contributed to significant government projects.
+                                  I've also worked as a programmer at Al-Mustaqbal University and as a freelance software engineer,
+                                 where I've successfully delivered more than 8 projects for various institutions and individuals.
                             </p>
                             <p>
-                                Beyond my professional endeavors, I also wear the hat of a blogger, sharing insights, ideas, and solutions across platforms like <a href="https://www.linkedin.com/in/hussein16mahdi/" class="text-color-c5">LinkedIn</a> ,<a href="https://hussein16mahdi.medium.com/" class="text-color-c5">Medium</a>  , and <a href="https://dev.to/_hm" class="text-color-c5">Dev</a> . Recently, my passion for software architecture has taken center stage, as I delve into the art of architecting solutions that are both elegant and efficient.
+                                Beyond my professional endeavors, I actively contribute to the technology community through technical writing on platforms like 
+                                 <a href="https://www.linkedin.com/in/hussein16mahdi/" class="text-color-c5">LinkedIn</a>, 
+                                 <a href="https://hussein16mahdi.medium.com/" class="text-color-c5">Medium</a>, 
+                                 <a href="https://dev.to/_hm" class="text-color-c5">Dev</a>, <a href="https://x.com/hussein16Mhadi" class="text-color-c5">X</a>, 
+                                 <a href="https://coderlegion.com/user/Hussein+Mahdi" class="text-color-c5">Coder legion</a>, 
+                                 <a href="https://www.youtube.com/@Learn_era" class="text-color-c5">Youtube</a> 
+                                 and <a href="https://github.com/Hu8MA" class="text-color-c5">Github</a>. 
+                               
+                                 and personal website <span class="text-color-c2">ProgrammerCoffee</span> and a startup company called  <a href="https://www.linkedin.com/company/era-visions" class="text-color-c5">Era</a> for software development and software solutions. 
+                                 My research interests have expanded to include explainable artificial intelligence,
+                                  agent artificial intelligence, sensory compression, and graph neural networks.
+                                   I maintain a specialized repository where I analyze and upload research theses,
+                                  and I'm particularly passionate about advancements in computer vision.
                             </p>
 
                             <p>
-                                So, what are you waiting for ?  Let's embark on this journey together and craft some powerful software solutions. Get in touch, and let's make things happen! 😎
+                                I have a special interest in <span class="text-color-c5"> military and defense technology</span>, 
+                                which began during my graduation project combining military applications with computer vision. 
+                                This passion led to my participation in the Security and Defense Exhibition <span class="text-color-c5">2024</span>, 
+                                where I contributed system suggestions and innovative ideas that leverage my software expertise in defense applications.
+                            </p>
+                            <p>
+                                So, what are you waiting for? Let's embark on this journey together and craft some powerful software solutions. Get in touch, and let's make things happen! 😎
                             </p>
                         </div>
 
                         <div class="w-full h-full flex flex-col gap-8">
 
-                            <div class="w-fit h-fit p-2 bg-color-c6 shadow-2xl shadow-color-p">
+                            <div class="w-fit h-fit p-2 bg-slate-700  shadow-2xl shadow-color-p transelator text-color-s/75 hover:text-color-s ">
                                 <h1 class="text-color-c2 text-contant text-xl">Professional Skills</h1>
-                                <p class="text-color-c2 text-sm text-capton p-3">
+                                <p class="text-sm text-capton p-3">
                                 Java | C# | Python | C++ | JavaScript | HTML | CSS | .Net | Git | SQL | ASP. Net Core | ASP. Net Core Web API | Entity Framework | Android Studio | MSSQL | PostgreSQL | Linq | Tailwind | Backend Web development | Frontend Web development | Full-Stack developer | Android Applications development | API development | JWT | MVC design pattern | MVVM architecture | Onion architecture | Clean architecture | RESTful API architecture | Asynchronous programming | Data Structure | Algorithm design | OOP | AI/ML | Clean code | SDLC | Database design | System design | Team leadership | SOLID programming principles | Design pattern | Problem-solving | GitHub repository
                                 </p>
                             </div>
@@ -391,9 +421,6 @@
                                 </div>
 
                           
-
-
-
                              </div>
                         </div>
 
@@ -406,8 +433,6 @@
                     <div class="w-[80%] p-1 bg-color-c3">  </div>
                 </section>
              
-                
- 
 
                 <section id="Connect" class="w-full h-full">
                     
@@ -428,12 +453,7 @@
                                         </svg>
                                         <span>Iraq address, Bable</span>
                                     </p>
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2 sm:mr-6">
-                                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                        </svg>
-                                        <span>+964 786 213 3988</span>
-                                    </p>
+                                   
                                     <p class="flex items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2 sm:mr-6">
                                             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
@@ -475,16 +495,13 @@
 
                 </section>
           
-
-
             </div>
         </div>
     </main>
-
-
-
+ 
         
     <footer class="relative  bg-color-c1 pt-8 pb-6 text-color-s text-head">
+     
         <div class="container mx-auto px-4">
        
             <div class="flex flex-wrap text-left lg:text-left">
@@ -611,77 +628,10 @@
     </footer>
 
      
-    <script>
+    <script src="animationtitle.js"></script>
+    <script src="formposting.js"></script>
+    <script src="unsplashimage.js"></script>
 
 
-const hamburger = document.getElementById('hamburger');
-const menu = document.getElementById('menu');
-const hLink = document.querySelectorAll('#hLink');
-const faSolid = document.querySelector(".fa-solid");
- 
-
-hamburger.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-    faSolid.classList.toggle('fa-xmark');
-})
-
-hLink.forEach(link => {
-    link.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-        faSolid.classList.toggle('fa-xmark');
-    })
-})
-
-    document.addEventListener("DOMContentLoaded", function() {
-    var sentences = [
-    'Programmer',
-    'Web developer',
-    'Software engineer',
-    'AI developer',
-    'Software architect',
-    'Web-Site design',
-    'Mobile App developer',
-    'Review research papers',
-    ];
-    
-     var span = document.getElementById('textanime');
-
-    var currentIndex = 0;
-    
-    function animateSentence() {
-        var sentence = sentences[currentIndex];
-        var letters = sentence.split('');
-      
-        letters.forEach((letter, index) => {
-            setTimeout(() => {
-                span.textContent += letter;
-            }, index * 100); // Adjust the delay to 100ms (0.1 seconds)
-        });
-
-        setTimeout(() => {
-            span.textContent ='';
-            currentIndex = (currentIndex + 1) % sentences.length; // Move to the next sentence or loop back to the first
-            setTimeout(animateSentence, 1000); // Adjust the delay before the next sentence appears
-        }, letters.length * 100 + 1000); // Adjust the delay to include the letter animation time
-    }
-    
-    animateSentence();
-});
-    </script>
-
-
-<script>
-    // Fetch a random programming image from Unsplash API
-    fetch('https://api.unsplash.com/photos/random?query=programming&client_id=wtNLH9ntnLjgM6Lonekacv56aJp0g2mIlqKJihknNFM')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('dynamic-image').style.backgroundImage = `url(${data.urls.regular})`;
-        })
-        .catch(error => {
-            // Fallback image in case of API failure
-            document.getElementById('dynamic-image').style.backgroundImage = 'url(https://images.unsplash.com/photo-1544847558-3ccacb31ee7f)';
-            console.error('Error fetching image:', error);
-        });
-    </script>
 </body>
 </html>

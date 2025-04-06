@@ -8,195 +8,38 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
      <link rel="shortcut icon" type="x-icon" href="logo.png">
-
-         <!-- FOR TEXT title-->
-         <link rel="preconnect" href="https://fonts.googleapis.com">
-         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Protest+Revolution&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-         
-     <!-- FOR TEXT -->
+     <!-- FOR LOGO -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Protest+Revolution&display=swap" rel="stylesheet">
+
+     <!-- FOR TEXT -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Protest+Revolution&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+ 
     <style>
-                     :root {
-            --color-p: #000000;
-            --color-s: #ffffff;
-            --color-c1: #171717;
-            --color-c2: #FAFAFA;
-            --color-c3: #A427DF;
-            --color-c4: #8338ec;
-            --color-c5: #00f5d4;
-            --color-c6: #667CEA;
+         html, body {
+         height: auto;
+        overflow-y: auto;
         }
-        body {
-            background-color: #171717;
-             margin: 0;
-            padding: 0;
-        }
-    
-        /* Article container styling */
-        .article-container {
-            max-width: 1000px;
-            width: 90%;
-            margin: 0 auto;
-            padding: 40px 20px;
-            color: var(--color-s);
-            line-height: 1.8;
-            font-family: "Assistant", sans-serif;
-            font-optical-sizing: auto;
-            font-size: 1.3rem;
-            font-weight:500;
-            font-style: normal;
-        }
-        
-        .article-container h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--color-s);
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--color-c5);
-            transition: color 0.2s ease;
-      
-
-        }
-        
-        .article-container h2 {
-            font-size: 1.9rem;
-            font-weight: 600;
-            color: var(--color-s);
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            transition: color 0.2s ease;
-        }
-        
-        .article-container h2:hover {
-            color: var(--color-c4);
-         }
-        .article-container h1:hover {
-            color: var(--color-c4);
-         }
-        .article-container p {
-          
-            margin-bottom: 1.5rem;
-            color: var(--color-s);
-        }
-        
-        .article-container img {
-            max-width: 100%;
-            height: auto;
-            margin: 2rem 0;
-            border-radius: 4px;
-        }
-        
-        .article-container pre {
-             border-radius: 5px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            overflow: auto;
-        }
-        
-        .article-container code {
-         
-            padding: 0.2rem 0.5rem;
-            border-radius: 3px;
-        }
-        
-        .article-container pre code {
-            padding: 0;
-            background-color: transparent;
-        }
-        
-        .article-container blockquote {
-            border-left: 4px solid var(--color-c4);
-            padding: 1rem 1.5rem;
-            margin: 2rem 0;
-         }
-        
-        .article-container ul, .article-container ol {
-            margin-left: 2rem;
-            margin-bottom: 1.5rem;
-             
-
-        }
-        
-        .article-container li {
-            margin-bottom: 0.5rem;
-            color: var(--color-s);
-        }
-        
-        #loading {
-            text-align: center;
-            padding: 3rem;
-            color: var(--color-s);
-            font-size: 1.25rem;
-        }
-        
-        #error {
-            background-color: var(--color-c1);
-            color: var(--color-c3);
-            padding: 30rem;
-            border-radius: 4px;
-            display: none;
-            margin-bottom: 8rem;
-            text-align: center;
-            font-size: 6rem;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .article-container {
-                padding: 30px 15px;
-            }
-            
-            .article-container h1 {
-                font-size: 2rem;
-            }
-            
-            .article-container h2 {
-                font-size: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .article-container {
-                padding: 20px 15px;
-            }
-            
-            .article-container h1 {
-                font-size: 1.75rem;
-            }
-            
-            .article-container h2 {
-                font-size: 1.25rem;
-            }
-            
-            .article-container pre {
-                padding: 1rem;
-            }
-        }
-       
-        .lazy-background {
-            background-image: none;
+                .lazy-background {
+          background-image: none;
         }
         
         @media (prefers-reduced-motion: no-preference) {
-            .lazy-background {
+          .lazy-background {
             content-visibility: auto;
-            }
+          }
         }
-        
-    </style>
-
-</head>
-
-<body class="max-h-screen">
-
+      </style>
+</head> 
+ 
+<body class="max-h-screen  bg-color-p  lazy-background">
 
     <header class="top-0 z-50 flex-col items-center justify-between bg-color-c1  border border-t-0  border-l-0  border-r-0  border-b-4  border-b-color-c3 sticky">
        
@@ -213,20 +56,20 @@
             <div class="hidden  md:flex justify-center text-head text-color-s ">
                 <ul class="flex items-center space-x-4  lg:space-x-6 "> 
                         <li>
-                            <a  class="linke p-2" href="https://hu8ma.github.io/#Products">Products</a>
+                            <a  class="linke p-2" href="#Products">Products</a>
                         </li>  
                         <li>
-                            <a  class="linke p-2" href="https://hu8ma.github.io/#Services">Services</a>
+                            <a  class="linke p-2" href="#Services">Services</a>
                         </li>
                        
                         <li>
-                            <a  class="linke p-2" href="https://hu8ma.github.io/#News">News</a>
+                            <a  class="linke p-2" href="#News">News</a>
                         </li>
                         <li>
-                            <a  class="linke p-2" href="https://hu8ma.github.io/#About">About</a>
+                            <a  class="linke p-2" href="#About">About</a>
                         </li>
                         <li>
-                            <a  class="linke p-2" href="https://hu8ma.github.io/#Connect">Connect US</a>
+                            <a  class="linke p-2" href="#Connect">Connect US</a>
                         </li>
                  </ul>
             </div>
@@ -265,18 +108,41 @@
          </nav>
 
     </header>
-    <!-- Your header and navigation here -->
-    
-     
-    <div id="loading">Loading article...</div>
-    <div id="error"></div>
-    <div class="article-container lazy-background" id="article-content" style="display: none;"></div>
-    
+         
+    <main class="min-h-screen  ">
+        <div class="w-full h-full flex justify-center">
+            <div class="w-full h-full  bg-color-c1 container my-6  px-8  rounded-lg">
+          
+                <div class="w-full h-full flex my-6 p-6 items-center gap-5">
+                    <span>
+                        <svg fill="#7007da" version="1.1" class="w-16 h-16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="7935ec95c421cee6d86eb22ecd1276c6"> <path style="display: inline;" d="M460.405,392.268v-85.154h-51.104v51.104v34.051h-34.051v-34.051H136.776v34.051H85.673v-85.154 H51.604v85.154H0.5V256.009h51.104v-51.095h34.069v-34.078h51.104v-51.095h51.095v51.095h136.276v-51.095h51.104v51.095h34.051 v34.078h51.104v51.095H511.5v51.104v85.154H460.405z M187.871,204.915h-51.095v51.095h51.095V204.915z M375.251,204.915h-51.104 v51.095h51.104V204.915z M273.044,443.361v-51.094h102.207v51.094H273.044z M238.975,443.361H136.776v-51.094h102.198V443.361z M85.673,68.638h51.104v51.104H85.673V68.638z M426.346,68.638v51.104h-51.095V68.638H426.346z"> </path> </g> </g></svg>
 
-    <section class="w-full h-full my-12 flex flex-col justify-center items-center">
-        <div class="w-[80%] p-1 bg-color-c5">  </div>
-    </section>
+                    </span>
+                    <h1 class="text-6xl text-color-s hover:text-color-c3  logo transelator linke">All News/Blogs </h1>
+                </div>
+          
+                <!-- Card 1 -->
+            <a href="#" class="block rounded-lg overflow-hidden my-6 shadow-md   hover:shadow-color-c5 transelator  ">
+                <div class="flex flex-col md:flex-row bg-gray-800">
+                    <div class="md:w-[30%]">
+                        <img class="h-64 w-64  object-cover md:h-full" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Office workspace with laptop">
+                    </div>
+                    <div class="md:w-3/5 p-6 text-white">
+                        <h2 class="text-3xl font-bold mb-2">Noteworthy technology acquisitions 2021</h2>
+                        <p class=" text-lg">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                        <p class=" text-lg">2025/06/12</p>
+                    </div>
+                </div>
+            </a>
 
+        
+            
+         
+            </div>
+        </div>
+    </main>
+
+            
     <footer class="relative  bg-color-c1 pt-8 pb-6 text-color-s text-head">
      
         <div class="container mx-auto px-4">
@@ -404,121 +270,11 @@
 
     </footer>
 
-
- 
-
-    <script>
-
-
-            const hamburger = document.getElementById('hamburger');
-            const menu = document.getElementById('menu');
-            const hLink = document.querySelectorAll('#hLink');
-            const faSolid = document.querySelector(".fa-solid");
-            
-
-            hamburger.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-                faSolid.classList.toggle('fa-xmark');
-            })
-
-            hLink.forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.toggle('hidden');
-                    faSolid.classList.toggle('fa-xmark');
-                })
-            })
- 
      
-            async function loadArticle() {
-            const articleContent = document.getElementById('article-content');
-            const loadingElement = document.getElementById('loading');
-            const errorElement = document.getElementById('error');
-            
-            // Get the article ID from the URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const articleId = urlParams.get('id');
-            
-            if (!articleId) {
-                errorElement.textContent = "Article ID not specified";
-                errorElement.style.display = 'block';
-                loadingElement.style.display = 'none';
-                return;
-            }
-            
-            // Use your existing article path structure
-            // Use your existing article path structure but with the correct GitHub raw content URL
-            const url = `https://raw.githubusercontent.com/Hu8MA/Hu8MA.github.io/main/Articles/${articleId}.md`;            
-            try {
-                const response = await fetch(url);
-                
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch article: ${response.status} ${response.statusText}`);
-                }
-                
-                const markdown = await response.text();
-                
-                // Configure Showdown options with enhanced code and punctuation support
-                const converter = new showdown.Converter({
-                    tables: true,
-                    tasklists: true,
-                    strikethrough: true,
-                    emoji: true,
-                    underline: true,
-                    ghCodeBlocks: true,
-                    simpleLineBreaks: true,
-                    literalMidWordUnderscores: true,
-                    literalMidWordAsterisks: true,
-                    smartIndentationFix: true,
-                    smartypants: true,
-                    parseImgDimensions: true,
-                    openLinksInNewWindow: true,
-                    backslashEscapesHTMLTags: true
-                });
-                
-                articleContent.innerHTML = converter.makeHtml(markdown);
-                
-                // Show article, hide loading
-                loadingElement.style.display = 'none';
-                articleContent.style.display = 'block';
-                
-                // Update page title from first h1 if available
-                const firstHeading = articleContent.querySelector('h1');
-                if (firstHeading) {
-                    // Update page title
-                    const pageTitle = firstHeading.textContent.trim();
-                    document.title = `${pageTitle} - Hussein Mahdi`;
-                    
-                    // Update URL with title
-                    const urlFriendlyTitle = pageTitle
-                        .toLowerCase()
-                        .replace(/[^\w\s-]/g, '') // Remove special characters
-                        .replace(/\s+/g, '-')     // Replace spaces with hyphens
-                        .replace(/-+/g, '-');     // Replace multiple hyphens with single hyphen
-                    
-                    // Keep the article ID but add the title
-                    const currentUrl = new URL(window.location.href);
-                    const articleId = currentUrl.searchParams.get('id');
-                    
-                    // Don't change the URL if we can't find the article ID
-                    if (articleId) {
-                        // Update URL without reloading the page
-                        history.pushState(
-                            {}, 
-                            document.title,
-                            `${currentUrl.pathname}?id=${articleId}&title=${urlFriendlyTitle}`
-                        );
-                    }
-                }
-            } catch (error) {
-                console.error('Error loading article:', error);
-                errorElement.textContent = `Error loading article: ${error.message}`;
-                errorElement.style.display = 'block';
-                loadingElement.style.display = 'none';
-            }
-        }
-        
-        // Load article when page loads
-        document.addEventListener('DOMContentLoaded', loadArticle);
-    </script>
+    <script src="animationtitle.js"></script>
+    <script src="formposting.js"></script>
+    <script src="unsplashimage.js"></script>
+    <script src="github-articles-fetcher.js"></script>
+
 </body>
 </html>
